@@ -1,0 +1,14 @@
+{
+    "name": "filter",
+    "version": "1.1",
+    "desc": "",
+    "cover": "",
+    "tag":"筛选",
+    "author": {
+        "name": "昂天",
+        "email": "angtian.fgm@taobao.com",
+        "page": ""
+    },
+    "type": "kissy-gallery",
+    "type-url": "http://gallery.kissyui.com/guide"
+}

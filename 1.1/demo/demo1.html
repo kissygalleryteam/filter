@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>单选+复选类型筛选</title>
+    <script src="http://g.tbcdn.cn/kissy/k/1.4.0/seed-min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="hotel/index.css">
+    <style>
+    .demo {
+        width: 750px;
+        margin: 10px auto;
+    }
+    .selected-info {
+        font-size: 12px;
+        line-height: 2;
+        list-style: none;
+    }
+    </style>
+</head>
+<body>
+    <div class="demo">
+        <div id="J_Radio" class="hotel-filter-list">
+            <strong class="tit">单选型</strong>
+            <div class="con radio">
+                <ul class="any">
+                    <li><a class="filter-unlimit filter-tag selected" href="javascript:;">不限</a></li>
+                </ul>
+                <ul class="list">
+                    <li><a class="filter-tag" href="javascript:;" data-value="110100" data-text="北京">北京<i></i></a></li>
+                    <li><a class="filter-tag" href="javascript:;" data-value="310100" data-text="上海">上海<i></i></a></li>
+                    <li><a class="filter-tag" href="javascript:;" data-value="440100" data-text="广州">广州<i></i></a></li>
+                    <li><a class="filter-tag" href="javascript:;" data-value="460200" data-text="三亚">三亚<i></i></a></li>
+                    <li><a class="filter-tag" href="javascript:;" data-value="330100" data-text="杭州">杭州<i></i></a></li>
+                    <li><a class="filter-tag" href="javascript:;" data-value="530700" data-text="丽江">丽江<i></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="J_Checkbox" class="hotel-filter-list">
+            <strong class="tit">复选型</strong>
+            <div class="con checkbox">
+                <ul class="any">
+                    <li><a class="filter-unlimit filter-tag selected" href="javascript:;">不限</a></li>
+                </ul>
+                <ul class="list">
+                    <li><a class="filter-tag" href="javascript:;" data-value="110100" data-text="北京">北京<i></i></a></li>
+                    <li><a class="filter-tag" href="javascript:;" data-value="310100" data-text="上海">上海<i></i></a></li>
+                    <li><a class="filter-tag" href="javascript:;" data-value="440100" data-text="广州">广州<i></i></a></li>
+                    <li><a class="filter-tag" href="javascript:;" data-value="460200" data-text="三亚">三亚<i></i></a></li>
+                    <li><a class="filter-tag" href="javascript:;" data-value="330100" data-text="杭州">杭州<i></i></a></li>
+                    <li><a class="filter-tag" href="javascript:;" data-value="530700" data-text="丽江">丽江<i></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <ul class="selected-info">
+            <li id="J_RadioSelected"></li>
+            <li id="J_CheckboxSelected"></li>
+        </ul>
+    </div>
+    <script>
+    var S = KISSY;
+    if (S.Config.debug) {
+        S.config({
+            packages:[
+                {
+                    name: 'gallery',
+                    path: '../../../',
+                    charset: 'utf-8',
+                    ignorePackageNameInUri: true
+                }
+            ]
+        });
+    }
+
+    S.use('gallery/filter/1.1/index', function (S, Filter) {
+
+        // ====================================================================
+        var radio = new Filter({
+            id: '#J_Radio',
+            type: 'radio'
+        });
+
+        var nRadioSelected = S.one('#J_RadioSelected');
+        radio.on('select', function(e) {
+            var data = e.option;
+            nRadioSelected.html(data.value ? '单选型：' + data.text + '('+ data.value +')' : '');
+        });
+
+        // ====================================================================
+        var checkbox = new Filter({
+            id: '#J_Checkbox',
+            type: 'checkbox'
+        });
+
+        var nCheckboxSelected = S.one('#J_CheckboxSelected');
+        checkbox.on('select', function(e) {
+            var data = e.option;
+            var result = [];
+            S.each(data.value, function(v, i) {
+                result.push(data.text[i] + '('+ v +')');
+            });
+            nCheckboxSelected.html(result.length ? '复选型：' + result.join('，') : '');
+        });
+    })
+</script>
+</body>
+</html>

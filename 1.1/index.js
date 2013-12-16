@@ -186,6 +186,9 @@ return S.extend(Filter, Base, {
         }
 
         self.nFilterTags.addClass(disabledClass);
+
+        // 如果包含不限选项，将其设为可用状态
+        self.nFilterUnlimit && self.nFilterUnlimit.removeClass(disabledClass);
     },
 
     /**

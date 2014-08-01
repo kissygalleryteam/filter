@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>旅游度假筛选</title>
+    <script src="http://g.tbcdn.cn/kissy/k/1.4.0/seed-min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="http://g.tbcdn.cn/??tpi/pi/2.0.0.0/base/index-min.css">
+    <link rel="stylesheet" href="http://g.tbcdn.cn//trip/travel-search/0.1.4/pages/travel-min.css">
+    <style>
+    .demo {
+        width: 790px;
+        margin: 10px auto;
+    }
+    </style>
+</head>
+<body>
+    <div class="demo">
+        <div class="travel-filter" id="J_TravelFilter">
+            <div class="travel-filter-list">
+                <ul>
+                    <li class="first" id="J_PlayList">
+                        <label for="">玩法:</label>
+                        <div>
+                            <span><a href="javascript:;" class="filter-unlimit filter-tag" data-value="0" data-text="不限">不限</a></span>
+                            <a href="javascript:;" class="filter-tag" data-value="19" data-text="北京常规游" title="北京常规游">北京常规游<em class="num">(608)</em></a>
+                            <a href="javascript:;" class="filter-tag" data-value="9223372036854775807" data-text="北京其他跟团游玩法" title="北京其他跟团游玩法">北京其他跟团游玩法<em class="num">(34)</em></a>
+                        </div>
+                    </li>
+
+                    <li id="J_Itinerary">
+                        <label for="">旅游日程:</label>
+                        <div>
+                            <a href="javascript:;" class="filter-unlimit filter-tag" data-value="2452.0.04:" data-text="不限">不限</a>
+                            <a href="javascript:;" class="filter-tag" data-value="2452.0.04:105332" data-text="1日游">1日游</a>
+                            <a href="javascript:;" class="filter-tag" data-value="2452.0.04:105333" data-text="2日游">2日游</a>
+                            <a href="javascript:;" class="filter-tag" data-value="2452.0.04:105334" data-text="3日游">3日游</a>
+                            <a href="javascript:;" class="filter-tag" data-value="2452.0.04:105335" data-text="4日游">4日游</a>
+                            <a href="javascript:;" class="filter-tag" data-value="2452.0.04:105336" data-text="5日游">5日游</a>
+                            <a href="javascript:;" class="filter-tag" data-value="2452.0.04:105337" data-text="6日游">6日游</a>
+                            <a href="javascript:;" class="filter-tag" data-value="2452.0.04:17300222" data-text="7-9日游">7-9日游</a>
+                            <a href="javascript:;" class="filter-tag" data-value="2452.0.04:17300223" data-text="10日以上">10日以上</a>
+                        </div>
+                    </li>
+                    <li id="J_OutTraffic">
+                        <label for="">去程交通:</label>
+                        <div>
+                            <a href="javascript:;" class="filter-unlimit filter-tag" data-value="14946571:" data-text="不限">不限</a>
+                            <a href="javascript:;" class="filter-tag" data-value="14946571:3234024" data-text="飞机">飞机</a>
+                            <a href="javascript:;" class="filter-tag" data-value="14946572.0.027770480" data-text="火车（高铁或动车）">火车（高铁或动车）</a>
+                            <a href="javascript:;" class="filter-tag" data-value="14946572.0.027770504" data-text="火车（其他车型）">火车（其他车型）</a>
+                            <a href="javascript:;" class="filter-tag" data-value="14946572.0.0423" data-text="汽车">汽车</a>
+                            <a href="javascript:;" class="filter-tag" data-value="14946571:64527654" data-text="游船">游船</a>
+                            <a href="javascript:;" class="filter-tag" data-value="14946572.0.00010" data-text="无">无</a>
+                            <a href="javascript:;" class="filter-tag" data-value="14946571:20213" data-text="其他">其他</a>
+                        </div>
+                    </li>
+                    <li id="J_ReturnTraffic">
+                        <label for="">回程交通:</label>
+                        <div>
+                            <a href="javascript:;" class="filter-unlimit filter-tag" data-value="14946607:" data-text="不限">不限</a>
+                            <a href="javascript:;" class="filter-tag" data-value="14946607:3234024" data-text="飞机">飞机</a>
+                            <a href="javascript:;" class="filter-tag" data-value="14946607:127770480" data-text="火车（高铁或动车）">火车（高铁或动车）</a>
+                            <a href="javascript:;" class="filter-tag" data-value="14946607:127770504" data-text="火车（其他车型）">火车（其他车型）</a>
+                            <a href="javascript:;" class="filter-tag" data-value="14946607:1423" data-text="汽车">汽车</a>
+                            <a href="javascript:;" class="filter-tag" data-value="14946607:64527654" data-text="游船">游船</a>
+                            <a href="javascript:;" class="filter-tag" data-value="14946607:10010" data-text="无">无</a>
+                            <a href="javascript:;" class="filter-tag" data-value="14946607:20213" data-text="其他">其他</a>
+                        </div>
+                    </li>
+
+                    <li id="J_CityFilter" class="city-filter">
+                        <label for="">出发城市:</label>
+                        <div>
+                            <a href="javascript:;" class="filter-unlimit filter-tag" data-value="0" data-text="不限">不限</a>
+                            <a href="javascript:;" class="filter-tag" data-value="29400" data-text="北京">北京</a>
+                            <a href="javascript:;" class="filter-tag" data-value="29425" data-text="深圳">深圳</a>
+                            <a href="javascript:;" class="filter-tag" data-value="29423" data-text="上海">上海</a>
+                            <a href="javascript:;" class="filter-tag" data-value="29403" data-text="成都">成都</a>
+                            <a href="javascript:;" class="filter-tag" data-value="29429" data-text="武汉">武汉</a>
+                            <a href="javascript:;" class="filter-tag" data-value="29420" data-text="南京">南京</a>
+                            <a href="javascript:;" class="filter-tag" data-value="29412" data-text="杭州">杭州</a>
+                            <a href="javascript:;" class="filter-tag" data-value="29421" data-text="南宁">南宁</a>
+                            <a href="javascript:;" class="filter-tag" data-value="29404" data-text="重庆">重庆</a>
+                            <a href="javascript:;" class="filter-tag" data-value="29416" data-text="昆明">昆明</a>
+                            <a href="javascript:;" class="filter-tag" data-value="29407" data-text="广州">广州</a>
+                            <a href="javascript:;" class="filter-tag" data-value="29437" data-text="郑州">郑州</a>
+                            <a href="javascript:;" class="filter-tag" data-value="30379" data-text="宁波">宁波</a>
+                            <a href="javascript:;" class="filter-tag" data-value="29402" data-text="长沙">长沙</a>
+                            <a href="javascript:;" class="filter-tag" data-value="29415" data-text="济南">济南</a>
+                            <a href="javascript:;" class="filter-tag" data-value="29413" data-text="合肥">合肥</a>
+                            <a href="javascript:;" class="filter-tag" data-value="29422" data-text="青岛">青岛</a>
+                            <a href="javascript:;" class="filter-tag" data-value="29427" data-text="太原">太原</a>
+                            <a href="javascript:;" class="filter-tag" data-value="29432" data-text="西安">西安</a>
+                            <a href="javascript:;" class="filter-tag" data-value="29401" data-text="长春">长春</a>
+                            <a href="javascript:;" class="filter-tag" data-value="38730" data-text="南昌">南昌</a>
+                            <a href="javascript:;" class="filter-tag" data-value="110250" data-text="六安">六安</a>
+                            <a href="javascript:;" class="filter-tag" data-value="29424" data-text="沈阳">沈阳</a>
+                            <a href="javascript:;" class="filter-tag" data-value="29431" data-text="厦门">厦门</a>
+                            <a href="javascript:;" class="filter-tag" data-value="31947" data-text="无锡">无锡</a>
+                            <a href="javascript:;" class="filter-tag" data-value="31950" data-text="徐州">徐州</a>
+                            <a href="javascript:;" class="filter-tag" data-value="31952" data-text="温州">温州</a>
+                            <a href="javascript:;" class="filter-tag" data-value="46042" data-text="邯郸">邯郸</a>
+                            <a href="javascript:;" class="filter-tag" data-value="110287" data-text="驻马店">驻马店</a>
+                            <a href="javascript:;" class="filter-tag" data-value="29409" data-text="贵阳">贵阳</a>
+                            <a href="javascript:;" class="filter-tag" data-value="29411" data-text="海口">海口</a>
+                            <a href="javascript:;" class="filter-tag" data-value="29414" data-text="呼和浩特">呼和浩特</a>
+                            <a href="javascript:;" class="filter-tag" data-value="29426" data-text="石家庄">石家庄</a>
+                            <a href="javascript:;" class="filter-tag" data-value="29428" data-text="天津">天津</a>
+                            <a href="javascript:;" class="filter-tag" data-value="30378" data-text="苏州">苏州</a>
+                            <a href="javascript:;" class="filter-tag" data-value="31956" data-text="嘉兴">嘉兴</a>
+                            <a href="javascript:;" class="filter-tag" data-value="46137" data-text="临沂">临沂</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+    var S = KISSY;
+    if (S.Config.debug) {
+        S.config({
+            packages:[
+                {
+                    name: 'kg',
+                    path: '../../../',
+                    charset: 'utf-8',
+                    ignorePackageNameInUri: true
+                }
+            ]
+        });
+    }
+
+    S.use('kg/filter/2.0.0/index, json', function (S, Filter) {
+
+        // ====================================================================
+        var filter1 = new Filter({
+            id: '#J_PlayList'
+        });
+
+        // 如果不传递参数，则选中不限（不限要指定相应calssName，默认filter-unlimit）
+        filter1.select();
+
+        // ====================================================================
+        var filter2 = new Filter({
+            id: '#J_Itinerary'
+        });
+
+        // 所中data-value="2452.0.04:105333"的选项
+        filter2.select('2452.0.04:105333');
+
+        // ====================================================================
+        var filter3 = new Filter({
+            id: '#J_OutTraffic'
+        });
+
+        // 所中data-value="14946572.0.027770504"的选项
+        filter3.select('14946572.0.027770504');
+
+        // ====================================================================
+        var filter4 = new Filter({
+            id: '#J_ReturnTraffic'
+        });
+
+        // 所中data-value="14946607:127770480"的选项
+        filter4.select('14946607:127770480');
+
+        // ====================================================================
+        var filter5 = new Filter({
+            id: '#J_CityFilter'
+        });
+
+        // 所中data-value="29400"的选项
+        filter5.select('29400');
+
+        // ====================================================================
+        var filters = [filter1, filter2, filter3, filter4, filter5];
+
+        // 选项选择事件
+        S.each([filter1, filter2, filter3, filter4, filter5], function(filter) {
+            filter.on('select', function(e) {
+                alert(S.JSON.stringify(e.option));
+            });
+        });
+    })
+</script>
+</body>
+</html>

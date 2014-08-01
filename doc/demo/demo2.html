@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>酒店筛选</title>
+    <script src="http://g.tbcdn.cn/kissy/k/1.4.0/seed-min.js"></script>
+    <script src="hotel/data.js"></script>
+    <link rel="stylesheet" href="hotel/index.css">
+    <style>
+    #demo {
+        width: 790px;
+        margin: 10px auto;
+    }
+    </style>
+</head>
+<body>
+    <div id="demo"></div>
+    <script>
+        var S = KISSY;
+
+        if (S.Config.debug) {
+            S.config({
+                packages:[
+                    {
+                        name: 'kg/filter',
+                        path: '../../',
+                        charset: 'utf-8',
+                        ignorePackageNameInUri: true
+                    }
+                ]
+            });
+        }
+
+        S.config({
+            packages: [
+                {
+                    name: 'hotel',
+                    path: 'hotel/',
+                    charset: 'utf-8',
+                    debug: true,
+                    ignorePackageNameInUri: true
+                }
+            ]
+        });
+
+        S.use('hotel/index', function (S, HotelFilter) {
+            new HotelFilter('#demo', BJDATA);
+        });
+    </script>
+</body>
+</html>

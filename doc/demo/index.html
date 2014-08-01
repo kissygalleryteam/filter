@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>筛选模块Demo</title>
+    <style>
+    li {
+        color: #888;
+        line-height: 2;
+    }
+    li a {
+        font-size: 20px;
+        font-weight: 700;
+    }
+    </style>
+<script>var S = KISSY;S.config({packages:[{name:"kg",path:"http://g.tbcdn.cn/kg/",charset:"utf-8",ignorePackageNameInUri:true}]});if (S.Config.debug){var srcPath = "../";S.config({packages:[{name:"kg/filter/2.0.0",path:srcPath,charset:"utf-8",ignorePackageNameInUri:true}]});}</script></head>
+<body>
+    <h2>Demo</h2>
+    <p>用法</p>
+<pre>
+KISSY.use('kg/filter/2.0.0/', function(S, Filter) {
+    new Filter();
+});
+</pre>
+<ul>
+    <li><a href="demo1.html?ks-debug" target="_blank">单选+复选筛选</a></li>
+    <li><a href="demo2.html?ks-debug" target="_blank">淘宝旅行-酒店筛选</a> 自定义类型</li>
+    <li><a href="demo3.html?ks-debug" target="_blank">淘宝旅行-旅游渡假筛选</a> 单选类型</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>filter</title>
+    <link rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://docs.kissyui.com/1.4/source/guideline/templates/assets/com-prettify.css">
+    <link rel="stylesheet" href="http://docs.kissyui.com/1.4/source/guideline/templates/assets/com.css">
+    <script src="http://cdn.staticfile.org/jquery/2.1.1-rc2/jquery.min.js"></script>
+    <script src="http://cdn.staticfile.org/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="http://cdn.staticfile.org/prettify/r298/prettify.min.js"></script>
+    <script src="http://g.tbcdn.cn/kissy/k/1.4.8/seed-min.js" data-config="{combine:true}"></script>
+  </head>
+  <body data-spy="scroll" data-target=".bs-docs-sidebar">
+    <div id="header"><a href="http://docs.kissyui.com/" class="logo">kissy</a>
+      <nav><a href="http://docs.kissyui.com/1.4/docs/html/coms.html">优秀组件推荐</a></nav>
+    </div>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3 bs-docs-sidebar">
+          <ul data-spy="affix" data-offset-top="0" class="nav nav-list bs-docs-sidenav"></ul>
+        </div>
+        <div class="span9 bs-docs-content">
+          <h1 data-id="undefined" class="title">filter</h1>
+          <p class="author-wrapper"><span>组件有问题？旺旺联系作者：</span><a href="https://github.com/undefined" target="_blank" data-name="昂天" class="author"><img src="http://0.gravatar.com/avatar/d21535bbfd9e7347261ad49aad2e9d19?s=60" alt="昂天"></a><span class="author-name">昂天</span>
+          </p>
+          <div class="common-link"><a href="../demo/index.html" target="_blank" class="demo">示例</a><a href="https://github.com/kissygalleryteam/filter" target="_blank" class="source">源码</a></div>
+          <p class="com-info"><span class="info-label">View</span><span data-com="filter" class="J_View">892</span></p>
+          <p class="com-info"><span class="info-label">所属分类</span><a href="http://kpm.taobao.net/list/排序&amp;过滤">排序&amp;过滤</a><span class="info-label tag-label">组件标签</span><a href="http://kpm.taobao.net/list/tag?tag=筛选">筛选</a>
+          </p>
+          <p class="com-info"><span class="info-label">kissy版本</span><span>1.4.X</span>
+          </p><h2 id="-">综述</h2>
+<p>Filter是一个筛选控件，在HTML结构上简单配置几个选项，即可完成筛选模块的订制。</p>
+<ul>
+<li>版本：2.0.0</li>
+<li>作者：昂天</li>
+<li>标签：筛选</li>
+<li>demo：<a href="http://kg.kissyui.com/filter/2.0.0/demo/index.html">http://kg.kissyui.com/filter/2.0.0/demo/index.html</a></li>
+</ul>
+<h2 id="-">初始化组件</h2>
+<pre><code>KISSY.use(&#39;kg/filter/2.0.0/&#39;, function (S, Filter) {
+     var filter = new Filter();
+});
+</code></pre><p>Filter依赖典型的HTML结构</p>
+<pre><code>&lt;div id=&quot;J_Filter&quot;&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;filter-tag filter-unlimit&quot; data-text=&quot;不限&quot; data-value=&quot;0&quot;&gt;不限&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;filter-tag&quot; data-text=&quot;选项一&quot; data-value=&quot;1&quot;&gt;选项一&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;filter-tag&quot; data-text=&quot;选项二&quot; data-value=&quot;2&quot;&gt;选项二&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre><ul>
+<li><code>#J_Filter</code>，Filter的ID，名称自取，必须指定，用作hook</li>
+<li><code>.filter-tag</code>，筛选选项，必须指定，名称可定制</li>
+<li><code>.filter-unlimit</code>，筛选不限选项，可以不指定，名称可定制</li>
+<li><code>data-text</code>，选项文本，必须指定</li>
+<li><code>data-value</code>，选项值，必须指定</li>
+</ul>
+<p>这样来调用</p>
+<pre><code>KISSY.use(&#39;kg/filter/2.0.0/, function (S, Filter) {
+    var filter = new Filter({
+        id: &#39;&#39;,
+        type: &#39;&#39;,
+        tagClass: &#39;&#39;,
+        unlimitClass: &#39;&#39;,
+        selectedClass: &#39;&#39;,
+        disabledClass: &#39;&#39;
+    });
+});
+</code></pre><h2 id="api-">API说明</h2>
+<h3 id="-">基本参数</h3>
+<p><em>id</em> （String）</p>
+<p>筛选模块id <code>Required</code></p>
+<p><em>type</em> （String）</p>
+<p>筛选模块类型，单选&#39;radio&#39;，复选&#39;checkbox&#39;，默认为&#39;radio&#39;</p>
+<p><em>tagClass</em> （String）</p>
+<p>选项的className，默认为&#39;filter-tag&#39;</p>
+<p><em>unlimitClass</em> （String）</p>
+<p>不限选项的className，默认为&#39;filter-unlimit&#39;</p>
+<p><em>selectedClass</em> （String）</p>
+<p>选项选中时的className，默认为&#39;selected&#39;</p>
+<p><em>disabledClass</em> （String）</p>
+<p>选项禁用时的className，默认为&#39;disabled&#39;</p>
+<h3 id="-">事件</h3>
+<p>通过给实例绑定</p>
+<p><em>select</em></p>
+<p>点选发生时事件，带入参数为</p>
+<pre><code>单选类型:
+option: {
+    text: &#39;&#39;, // 筛选模块文本
+    value: &#39;&#39; // 筛选模块选项值
+}
+
+复选类型:    
+option: {
+    text: [],  // 筛选模块文本数组
+    value: [], // 筛选模块值数据
+}
+</code></pre><h3 id="-">方法</h3>
+<p><em>select(value)</em></p>
+<p>选择匹配项，参数为选项值</p>
+<ul>
+<li>单选时为选项值字符串</li>
+<li>复选时为选项值数组</li>
+</ul>
+<p><em>remove(value)</em></p>
+<p>删除匹配项，参数为选项值</p>
+<ul>
+<li>单选时为选项值字符串</li>
+<li>复选时为选项值数组</li>
+<li>不传入参数时，删除所有选项</li>
+</ul>
+<p><em>getValue</em></p>
+<p>获取筛选模块值，返回格式为</p>
+<pre><code>单选类型:
+option: {
+    text: &#39;&#39;, // 筛选模块文本
+    value: &#39;&#39; // 筛选模块选项值
+}
+
+复选类型:    
+option: {
+    text: [],  // 筛选模块文本数组
+    value: [], // 筛选模块值数据
+}
+</code></pre><p><em>getLength</em></p>
+<p>获取筛选模块已选择的选项个数</p>
+<p><em>disabled(value)</em></p>
+<p>禁用匹配项，如果不传入参数，禁用所有选项</p>
+<p><em>enabled</em></p>
+<p>启用匹配项，如果不传入参数，启用所有选项</p>
+
+          <div style="display:none;"><script type="text/javascript" src="http://tajs.qq.com/stats?sId=36378479" charset="UTF-8"></script></div>
+          <script src="http://docs.kissyui.com/1.4/source/guideline/templates/assets/com.js"></script>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
